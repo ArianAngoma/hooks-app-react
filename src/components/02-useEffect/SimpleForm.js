@@ -1,5 +1,6 @@
 import './effects.css';
 import {useEffect, useState} from "react";
+import Message from "./Message";
 
 const SimpleForm = () => {
     // useEffect se utiliza para escuchar cambios específicos del state o de alguna parte de la aplicación
@@ -18,19 +19,19 @@ const SimpleForm = () => {
     });
     */
 
-    // Se ejecutará solo una vez cuando se cargue el formulario
+    // Se ejecutará solo una vez cuando se cargue el componente
     useEffect(() => {
-        console.log('Hola');
+        // console.log('Hola');
     }, []);
 
     // Se ejecutará cuando solo el formState cambia
     useEffect(() => {
-        console.log('formState cambió');
+        // console.log('formState cambió');
     }, [formState]);
 
     // Se ejecutará cuando solo el email del formState cambia
     useEffect(() => {
-        console.log('email cambió');
+        // console.log('email cambió');
     }, [email]);
 
 
@@ -72,6 +73,8 @@ const SimpleForm = () => {
                     onChange={handleInputChange}
                 />
             </div>
+
+            {(name === '123') && <Message/>}
         </>
     )
 }
