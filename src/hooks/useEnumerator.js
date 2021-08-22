@@ -2,25 +2,25 @@ import {useState} from "react";
 
 const useEnumerator = (initialState = 10) => {
     // Uso del hook useState para inicializar el state
-    const [state, setState] = useState(initialState);
+    const [counter, setCounter] = useState(initialState);
 
     // Funcion para sumar al state
-    const increment = (factor = 1) => {
-        setState(state + factor);
+    const increment = () => {
+        setCounter(counter + 1);
     }
 
     // Funcion poner el valor por defecto al state
     const reset = () => {
-        setState(initialState);
+        setCounter(initialState);
     }
 
     // Funcion para restar al state
-    const decrement = (factor = 1) => {
-        setState(state - factor);
+    const decrement = () => {
+        setCounter(counter - 1);
     }
 
     return {
-        state,
+        counter,
         increment,
         reset,
         decrement
