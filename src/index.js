@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 // import HooksApp from "./HooksApp";
 // import EnumeratorApp from "./components/01-useState/EnumeratorApp";
 // import EnumeratorWithCustomHook from "./components/01-useState/EnumeratorWithCustomHook";
-import SimpleForm from "./components/02-useEffect/SimpleForm";
+// import SimpleForm from "./components/02-useEffect/SimpleForm";
+import FormWithCustomHook from "./components/02-useEffect/FormWithCustomHook";
 
 ReactDOM.render(
     // Hook useState
@@ -13,6 +14,10 @@ ReactDOM.render(
     // <EnumeratorWithCustomHook/>,
 
     // Hook useEffect
-    <SimpleForm/>,
-    document.getElementById('root')
-);
+    // <SimpleForm/>,
+
+    // Form with custom hook
+    <FormWithCustomHook/>,
+document.getElementById('root')
+)
+;
