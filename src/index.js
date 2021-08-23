@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import MultipleCustomHook from "./components/03-examples/MultipleCustomHook";
-import FocusScreen from "./components/04-useRef/FocusScreen";
+// import FocusScreen from "./components/04-useRef/FocusScreen";
+import RealExampleRef from "./components/04-useRef/RealExampleRef";
 // import HooksApp from "./HooksApp";
 // import EnumeratorApp from "./components/01-useState/EnumeratorApp";
 // import EnumeratorWithCustomHook from "./components/01-useState/EnumeratorWithCustomHook";
@@ -23,6 +24,9 @@ ReactDOM.render(
 
     // <MultipleCustomHook/>,
 
-    <FocusScreen/>,
+    // Hook useRef
+    // <FocusScreen/>,
+
+    <RealExampleRef/>,
     document.getElementById('root')
 );
