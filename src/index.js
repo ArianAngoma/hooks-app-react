@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LayoutEffect from "./components/05-useLayoutEffect/LayoutEffect";
+import Memorize from "./components/06-memos/Memorize";
+// import LayoutEffect from "./components/05-useLayoutEffect/LayoutEffect";
 // import MultipleCustomHook from "./components/03-examples/MultipleCustomHook";
 // import FocusScreen from "./components/04-useRef/FocusScreen";
 // import RealExampleRef from "./components/04-useRef/RealExampleRef";
@@ -29,7 +30,9 @@ ReactDOM.render(
     // <FocusScreen/>,
     // <RealExampleRef/>,
 
+    // Hook useLayoutEffect
+    // <LayoutEffect/>,
 
-    <LayoutEffect/>,
+    <Memorize/>,
     document.getElementById('root')
 );
