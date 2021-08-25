@@ -3,6 +3,11 @@ import {useState} from "react";
 const useForm = (initialState = {}) => {
     const [values, setValues] = useState(initialState);
 
+    // Funcion para limpiar el formulario
+    const reset = () => {
+        setValues(initialState)
+    }
+
     const handleInputChange = ({target}) => {
         setValues({
             ...values,
@@ -10,7 +15,7 @@ const useForm = (initialState = {}) => {
         })
     }
 
-    return [values, handleInputChange];
+    return [values, handleInputChange, reset];
 }
 
 export default useForm;

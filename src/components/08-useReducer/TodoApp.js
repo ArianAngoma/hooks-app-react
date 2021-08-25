@@ -1,16 +1,50 @@
 import './styles.css';
-import {useReducer} from "react";
+import {useEffect, useReducer} from "react";
 import todoReducer from "./todoReducer";
+import useForm from "../../hooks/useForm";
 
-const initialState = [{
-    id: new Date().getTime(),
-    description: 'Aprender React',
-    done: false
-}]
+const init = () => {
+    /*return [{
+        id: new Date().getTime(),
+        description: 'Aprender React',
+        done: false
+    }]*/
+
+    return JSON.parse(localStorage.getItem('todos')) || [];
+}
 
 const TodoApp = () => {
-    const [todos] = useReducer(todoReducer, initialState);
-    console.log(todos);
+    const [todos, dispatch] = useReducer(todoReducer, [], init);
+
+    const [{description}, handleInputChange, reset] = useForm({
+        description: ''
+    });
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (description.trim().length <= 1) {
+            return;
+        }
+
+        const newTodo = {
+            id: new Date().getTime(),
+            description: description,
+            done: false
+        };
+
+        const action = {
+            type: 'add',
+            payload: newTodo
+        }
+
+        dispatch(action);
+        reset();
+    }
 
     return (
         <div>
@@ -36,14 +70,17 @@ const TodoApp = () => {
                     <h4>Agregar Todo</h4>
                     <hr/>
 
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <input type='text'
                                name='description'
                                className='form-control'
                                placeholder='Tarea'
-                               autoComplete='off'/>
+                               autoComplete='off'
+                               onChange={handleInputChange}
+                               value={description}/>
 
-                        <button className='btn btn-outline-primary mt-1 w-100'>
+                        <button className='btn btn-outline-primary mt-1 w-100'
+                                type='submit'>
                             Agregar
                         </button>
                     </form>
