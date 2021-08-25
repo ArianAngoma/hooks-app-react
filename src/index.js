@@ -1,6 +1,6 @@
-/*
 import React from 'react';
 import ReactDOM from 'react-dom';
+import TodoApp from "./components/08-useReducer/TodoApp";
 // import CallbackHook from "./components/06-memos/CallbackHook";
 // import {Padre} from "./components/07-tarea-memo/Padre";
 // import Memorize from "./components/06-memos/Memorize";
@@ -47,7 +47,10 @@ ReactDOM.render(
     // <CallbackHook/>,
 
     // <Padre/>,
-    document.getElementById('root')
-);*/
 
-import './components/08-useReducer/intro-reducer';
+    <TodoApp/>,
+    document.getElementById('root')
+);
+
+// Intrucción a Reducer
+// import './components/08-useReducer/intro-reducer';
