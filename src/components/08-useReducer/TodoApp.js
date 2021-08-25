@@ -1,7 +1,8 @@
-import './styles.css';
 import {useEffect, useReducer} from "react";
 import todoReducer from "./todoReducer";
 import useForm from "../../hooks/useForm";
+
+import './styles.css';
 
 const init = () => {
     /*return [{
@@ -23,6 +24,16 @@ const TodoApp = () => {
     useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todos));
     }, [todos]);
+
+    const handleDelete = (todoId) => {
+        console.log(todoId);
+        const action = {
+            type: 'delete',
+            payload: todoId
+        }
+
+        dispatch(action);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -60,7 +71,12 @@ const TodoApp = () => {
                                     key={todo.id}
                                     className='list-group-item'>
                                     <p className='text-center'>{i + 1}. {todo.description}</p>
-                                    <button className='btn btn-danger'>Borrar</button>
+                                    <button className='btn btn-danger'
+                                        /*Se envía el handleDelete como callback porque recibe un argumento*/
+                                            onClick={() => {
+                                                handleDelete(todo.id)
+                                            }}>Borrar
+                                    </button>
                                 </li>
                             ))
                         }
