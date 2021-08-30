@@ -16,9 +16,9 @@ const TodoAdd = React.memo(({handleAddTodo}) => {
                 id: new Date().getTime(),
                 description: description,
                 done: false
-            })
+            });
+            reset();
         }
-        reset();
     }
 
     return (
