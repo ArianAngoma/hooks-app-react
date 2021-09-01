@@ -14,7 +14,7 @@ exports[`Test on <TodoApp/> Should display correctly 1`] = `
     <div
       className="col-7"
     >
-      <Memo()
+      <TodoList
         handleDelete={[Function]}
         handleToggle={[Function]}
         todos={Array []}
@@ -23,7 +23,7 @@ exports[`Test on <TodoApp/> Should display correctly 1`] = `
     <div
       className="col-5"
     >
-      <Memo()
+      <TodoAdd
         handleAddTodo={[Function]}
       />
     </div>

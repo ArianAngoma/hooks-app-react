@@ -19,4 +19,6 @@ const TodoList = React.memo(({todos, handleDelete, handleToggle}) => {
     )
 })
 
+TodoList.displayName = 'TodoList';
+
 export default TodoList;

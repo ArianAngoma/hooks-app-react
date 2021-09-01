@@ -1,5 +1,6 @@
 import {mount, shallow} from "enzyme";
 import TodoAdd from "../../../components/08-useReducer/TodoAdd";
+import {act} from "@testing-library/react";
 
 describe('Test on <TodoAdd/>', () => {
     const handleAddTodo = jest.fn();
@@ -33,9 +34,11 @@ describe('Test on <TodoAdd/>', () => {
         });
 
         const formSubmit = wrapper.find('form').prop('onSubmit');
-        formSubmit({
-            preventDefault() {
-            }
+        act(() => {
+            formSubmit({
+                preventDefault() {
+                }
+            });
         });
 
         expect(handleAddTodo).toHaveBeenCalledTimes(1);

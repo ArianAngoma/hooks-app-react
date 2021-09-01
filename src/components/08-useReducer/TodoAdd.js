@@ -1,5 +1,6 @@
 import React from "react";
 import useForm from "../../hooks/useForm";
+import TodoListItem from "./TodoListItem";
 
 const TodoAdd = React.memo(({handleAddTodo}) => {
     console.log('TodoAdd de nuevo D:')
@@ -43,5 +44,7 @@ const TodoAdd = React.memo(({handleAddTodo}) => {
         </>
     )
 })
+
+TodoAdd.displayName = 'TodoAdd';
 
 export default TodoAdd;
